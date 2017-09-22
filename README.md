@@ -27,14 +27,14 @@ USB boot-disk setup
 	label install
 	  menu label ^Install Ubuntu Server
 	  kernel /install/vmlinuz
-      append vga=788 initrd=/install/initrd.gz console=tty0 console=ttyS0,115200n8  –--
+      append vga=788 initrd=/install/initrd.gz console=tty0 console=ttyS0,9600n8  –--
 	```
 
 	- `syslinux.cfg`
 
 	```
 	CONSOLE 0
-	SERIAL 0 115200 0
+	SERIAL 0 9600 0
 
 	default menu.c32
 	prompt 0
@@ -43,7 +43,7 @@ USB boot-disk setup
 
 	label unetbootindefault
 	kernel /ubnkern
-    append vga=normal initrd=/ubninit nomodeset askmethod console=tty0 console=ttyS0,115200n8
+    append vga=788 initrd=/ubninit nomodeset askmethod console=tty0 console=ttyS0,9600n8
 	```
     
     - `boot/grub/grub.cfg`
@@ -53,7 +53,7 @@ USB boot-disk setup
 	```    
     menuentry "Install Ubuntu Server" {
         set gfxpayload=keep
-        linux   /install/vmlinuz  file=/cdrom/preseed/ubuntu-server.seed vga=normal console=tty0 console=ttyS0,115200n8 ---
+        linux   /install/vmlinuz  file=/cdrom/preseed/ubuntu-server.seed vga=normal console=tty0 console=ttyS0,9600n8 ---
         initrd  /install/initrd.gz
         }
 	```
