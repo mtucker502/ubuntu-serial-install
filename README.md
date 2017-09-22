@@ -27,7 +27,7 @@ USB boot-disk setup
 	label install
 	  menu label ^Install Ubuntu Server
 	  kernel /install/vmlinuz
-      append vga=normal initrd=/install/initrd.gz -- console=tty0 console=ttyS0,115200n8 nosplash debug -
+      append vga=788 initrd=/install/initrd.gz console=tty0 console=ttyS0,115200n8  –--
 	```
 
 	- `syslinux.cfg`
